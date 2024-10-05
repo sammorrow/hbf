@@ -1,0 +1,80 @@
+{
+    "name": "BasicActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "72d42185-5fec-4768-8ead-294d3a87c51d",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "f5c6a342-8a7c-48a5-a033-91f01c41b8c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "496b50e9-7518-407e-b54e-88ff1d632347",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwitchAmmo",
+                    "type": "Button",
+                    "id": "bebcb909-1cd3-4cd3-851f-a44a3f32954a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "164fbb64-088d-400f-91ee-a034c5e00dac",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Default scheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d3dafa32-1a13-4157-833c-9f853f3af9af",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d294ab3-4c12-41bc-a7d1-5be922856792",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchAmmo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Default scheme",
+            "bindingGroup": "Default scheme",
+            "devices": []
+        }
+    ]
+}
