@@ -6,7 +6,6 @@ using UnityEngine;
 // Placeholder class to store player state. 
 public class Player : MonoBehaviour
 {
-
     public float maxHealth = 100;
     public float health;
     public float[] ammo = new float[3]; // player has 3 types of ammo
