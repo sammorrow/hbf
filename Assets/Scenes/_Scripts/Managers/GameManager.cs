@@ -10,7 +10,6 @@ public class GameManager : Singleton<GameManager>
     public GameObject CooldownText;
 
 
-    // This shouldn't be in here long term but it avoids merge conflicts :P
     public const float GUN_COOLDOWN = 1;
     public float GunCooldown = 0;
 

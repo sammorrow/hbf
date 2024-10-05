@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// Placeholder class to store player state. 
 public class Player : Singleton<Player>
 {
     public float maxHealth = 100;
