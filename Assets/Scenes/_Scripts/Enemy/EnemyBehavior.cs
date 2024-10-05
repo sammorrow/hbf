@@ -11,7 +11,7 @@ public class EnemyBehavior : MonoBehaviour
     private float deadTime = 30; // how long the enemy will remain dead/removable for
     private float deadTimer;
 
-    private 
+    [SerializeField] GameObject selfPrefab; // used when enemy splits/duplicates
 
     void SetHealth(float newHealthValue)
     {
@@ -20,7 +20,9 @@ public class EnemyBehavior : MonoBehaviour
 
     void Split()
     {
-        // TODO: split the enemy (create new copy) and set its health = damageHealthThreshold
+        Vector3 randomLocation = new Vector3(0,0,0); // TODO: set this to a random position inside the body's bounds
+        Quaternion randomRotation = Quaternion.identity;
+        Instantiate(selfPrefab, randomLocation, randomRotation); // TODO: split the enemy (create new copy) and set its health = damageHealthThreshold
         SetHealth(damageHealthThreshold);
     }
 
