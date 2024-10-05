@@ -69,7 +69,6 @@
     <Compile Include="Assets\Scenes\_Scripts\UI\UIAmmo.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Utilities\Singleton.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Player\CharacterController.cs" />
-    <Compile Include="Assets\InputSystem\BasicActionsInputs.cs" />
     <Compile Include="Assets\Scenes\_Scripts\UI\HealthBar.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Enemy\EnemyBehavior.cs" />
   </ItemGroup>

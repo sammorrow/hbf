@@ -21,7 +21,7 @@ public class EnemyBehavior : MonoBehaviour
     void Split()
     {
         Vector3 randomLocation = new Vector3(0,0,0); // TODO: set this to a random position inside the body's bounds
-        Quaternion randomRotation = Quaternion.identity;
+        Quaternion randomRotation = Quaternion.identity; // TODO: set this to be a random rotation (only 1 axis needs to be set probably)
         Instantiate(selfPrefab, randomLocation, randomRotation); // TODO: split the enemy (create new copy) and set its health = damageHealthThreshold
         SetHealth(damageHealthThreshold);
     }

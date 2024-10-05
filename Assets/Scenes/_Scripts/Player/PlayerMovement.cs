@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
+
     public float Speed = 7f;
 
     private float _horizontalInput;
