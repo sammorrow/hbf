@@ -2,37 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// This should go into the player class really BUT avoiding merge issues for now
 public class PlayerShoot : MonoBehaviour
 {
-    public float PROJECTILE_SPEED;
+    // scaffolding to represent that maybe different ammos could have different fire rates
     public float FIRE_RATE;
 
+    public Transform  creatureSpawnTransform;
+    public GameObject creaturePrefab, worldObject;
 
-    [Header("Initial Setup")]
-    public Transform bulletSpawnTransform;
-    public GameObject creaturePrefab;
-
-    private float timer;
-
-    private void FixedUpdate()
+    // no fixedupdate, uses time.deltatime
+    private void Update()
     {
-        if (timer > 0)
+        if (GameManager.Instance.GunCooldown > 0)
         {
-            timer -= Time.deltaTime / FIRE_RATE;
+            GameManager.Instance.GunCooldown -= Time.deltaTime / FIRE_RATE;
         }
 
 
-        if (Input.GetButton("LeftClick") && timer <= 0)
+        // tbd use input manager
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.GunCooldown <= 0)
         {
+            GameManager.Instance.GunCooldown = GameManager.GUN_COOLDOWN;
             Shoot();
         }
     }
 
     void Shoot()
     {
-        GameObject creature = Instantiate(creaturePrefab, bulletSpawnTransform.position, Quaternion.identity, GameObject.FindGameObjectWithTag("WorldObjectHolder").transform);
-        creature.GetComponent<Rigidbody>().AddForce(bulletSpawnTransform.forward * PROJECTILE_SPEED, ForceMode.Impulse);
-
-        timer = 1;
+        GameObject creature = Instantiate(creaturePrefab, creatureSpawnTransform.position, new Quaternion(0, 180, 180, 0), worldObject.transform);
     }
 }
