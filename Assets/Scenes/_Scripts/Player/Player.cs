@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 // Placeholder class to store player state. 
-public class Player : MonoBehaviour
+public class Player : Singleton<Player>
 {
     public float maxHealth = 100;
     public float health;
@@ -33,4 +33,6 @@ public class Player : MonoBehaviour
     {
 
     }
+
+
 }
