@@ -63,8 +63,6 @@
     <Compile Include="Assets/Scenes/_Scripts/Creatures/Creature.cs" />
     <Compile Include="Assets/Scenes/_Scripts/UI/MinimapCamera.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Shot/Shot1Behavior.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Player/PlayerShoot.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Player/PlayerMovement.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Player/Player.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureJanitor.cs" />
     <Compile Include="Assets/Scenes/_Scripts/UI/UIAmmo.cs" />
@@ -1006,6 +1004,10 @@
       <HintPath>Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1024,6 +1026,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.InputSystem.ForUI">
+      <HintPath>Library/ScriptAssemblies/Unity.InputSystem.ForUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">

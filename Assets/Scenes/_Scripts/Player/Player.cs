@@ -13,19 +13,58 @@ public class Player : Singleton<Player>
 
     public bool IsDead;
 
+
+    // Movement
+    public float Speed = 7f;
+
+    private float _horizontalInput;
+    private float _verticalInput;
+
+
+    [SerializeField] private CharacterController _characterController;
+
+    // Shoot
+    public float FIRE_RATE;
+
+    public Transform creatureSpawnTransform;
+    public GameObject creaturePrefab, worldObject;
+
     [SerializeField] private GameObject prefabShot1;
     [SerializeField] private GameObject prefabShot2;
     [SerializeField] private GameObject prefabShot3;
 
-    private void Shoot()
+    void Start()
     {
-        if (Input.GetMouseButtonDown(0))
+        health = maxHealth;
+        ammoType = 0;
+    }
+
+    void FixedUpdate()
+    {
+
+        SwitchAmmo();
+        Move();
+
+    }
+
+    // no fixedupdate, uses time.deltatime
+    private void Update()
+    {
+        if (GameManager.Instance.GunCooldown > 0)
         {
-            Vector3 randomLocation = transform.position;
-            Quaternion randomRotation = Quaternion.identity; // TODO: set this to be a random rotation (only 1 axis needs to be set probably)
-            Instantiate(prefabShot1, randomLocation, randomRotation); // TODO: change
-            // TODO: spawn creature based on ammoType
+            GameManager.Instance.GunCooldown -= Time.deltaTime / FIRE_RATE;
         }
+
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.GunCooldown <= 0)
+        {
+            GameManager.Instance.GunCooldown = GameManager.GUN_COOLDOWN;
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        Instantiate(creaturePrefab, creatureSpawnTransform.position, new Quaternion(0, 180, 180, 0), worldObject.transform);
     }
 
     private void SwitchAmmo()
@@ -41,17 +80,16 @@ public class Player : Singleton<Player>
         health -= damageValue;
     }
 
-    void Start()
+    private void Move()
     {
-        health = maxHealth;
-        ammoType = 0;
+        _horizontalInput = _horizontalInput < 0 ? -1 : Mathf.Ceil(_horizontalInput);
+        _verticalInput = _verticalInput < 0 ? -1 : Mathf.Ceil(_verticalInput);
+
+        Vector3 movementVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+
+
+        _characterController.Move(movementVector * Speed * Time.deltaTime);
+
     }
-
-    void FixedUpdate()
-    {
-        Shoot();
-        SwitchAmmo();
-    }
-
-
 }
