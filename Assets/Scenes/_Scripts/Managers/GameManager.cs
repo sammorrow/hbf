@@ -26,6 +26,12 @@ public class GameManager : Singleton<GameManager>
         Player.Instance.Initialize();
     }
 
+    public void EndGame()
+    {
+        Time.timeScale = 0;
+        UIManager.Instance.ShowResults();
+    }
+
     private void Start()
     {
         Time.timeScale = 0;

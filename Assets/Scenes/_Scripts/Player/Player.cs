@@ -96,6 +96,8 @@ public class Player : Singleton<Player>
     public void DamagePlayer(float damageValue)
     {
         health -= damageValue;
+        if (health <= 0)
+            GameManager.Instance.EndGame();
     }
 
     private void Move()

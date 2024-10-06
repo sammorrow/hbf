@@ -18,6 +18,11 @@ public class EnemyBehavior : MonoBehaviour
 
     [SerializeField] GameObject selfPrefab; // used when enemy splits/duplicates
 
+    public float GetHealth()
+    {
+        return health;
+    }
+
     void SetHealth(float newHealthValue)
     {
         health = newHealthValue;

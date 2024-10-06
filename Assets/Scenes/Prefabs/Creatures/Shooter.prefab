@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6636087302953222250}
   - component: {fileID: 1279408742404480018}
   - component: {fileID: 6945248252733222062}
+  - component: {fileID: 633880246893452269}
   m_Layer: 0
   m_Name: Shooter
   m_TagString: Untagged
@@ -107,3 +108,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &633880246893452269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7151337822141544190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cc787ba7397493d868e640ff2cfe6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifespan: 15
+  ATTACK_RANGE: 4
+  FIRE_RATE: 1
+  fireTimer: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
