@@ -99,6 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifespan: 30
+  scanRange: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!64 &6945248252733222062
 MeshCollider:
   m_ObjectHideFlags: 0

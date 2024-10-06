@@ -1,14 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
-
     public GameObject CooldownText;
-
 
     public const float GUN_COOLDOWN = 1;
     public const float BASE_SPAWN_TIME = 20;

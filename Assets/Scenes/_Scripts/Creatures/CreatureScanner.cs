@@ -5,7 +5,6 @@ public class CreatureScanner : CreatureBase
 {
 
     public float scanRange = 10;
-    GameObject _aggroPrefab;
 
     public LayerMask enemyLayer;
 
@@ -22,7 +21,7 @@ public class CreatureScanner : CreatureBase
     void Update()
     {
         if (Alarm())
-            Debug.Log("ALARM ALARM!");
+            ZoneManager.Instance.OnVirusDetected(gameObject.transform.position);
     }
 
     public bool Alarm()
