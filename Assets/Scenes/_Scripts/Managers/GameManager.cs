@@ -11,17 +11,20 @@ public class GameManager : Singleton<GameManager>
 
 
     public const float GUN_COOLDOWN = 1;
+    public const float BASE_SPAWN_TIME = 20;
     public float GunCooldown = 0;
 
     public float enemySpawnTime;
     public float enemySpawnTimer;
     public float gameRunTime;
 
+    [SerializeField] private GameObject enemyPrefab;
+
     public void StartGame()
     {
         Time.timeScale = 1;
         gameRunTime = 0;
-        enemySpawnTime = 20; // TODO: tweak enemySpawnTime and Timer
+        enemySpawnTime = BASE_SPAWN_TIME; // TODO: tweak enemySpawnTime
         enemySpawnTimer = enemySpawnTime;
         Player.Instance.Initialize();
     }
@@ -40,8 +43,22 @@ public class GameManager : Singleton<GameManager>
     void FixedUpdate()
     {
         refreshUI();
+        enemySpawnTime -= Time.deltaTime / 100; // makes enemies spawn slightly faster over time
+        // TODO: work on better algorithm for this! 
+
         enemySpawnTimer -= Time.deltaTime;
         gameRunTime += Time.deltaTime;
+        if (enemySpawnTimer < 0)
+        {
+            SpawnEnemy();
+            enemySpawnTimer = enemySpawnTime;
+        }
+    }
+
+    void SpawnEnemy()
+    {
+        Vector3 spawnLocation = Vector3.zero; // TODO: figure out where to spawn the enemy! randomly inside the body...
+        Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
     }
 
     void refreshUI()

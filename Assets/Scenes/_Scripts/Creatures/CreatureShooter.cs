@@ -58,9 +58,6 @@ public class CreatureShooter : CreatureBase
         return closestVirus;
     }
 
-    public override void CreateAggroZone(){
-    }
-
     private void Shoot(GameObject targetVirus)
     {
         Debug.Log("Shooting at " + targetVirus);

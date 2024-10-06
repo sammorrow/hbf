@@ -18,8 +18,6 @@ public abstract class CreatureBase : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public abstract void CreateAggroZone();
-
     private void OnTriggerEnter(Collider other)
     {
         // TBD, base collision logic

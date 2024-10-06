@@ -4,28 +4,32 @@ using System.Collections;
 public class CreatureScanner : CreatureBase
 {
 
+    public float scanRange = 10;
     GameObject _aggroPrefab;
+
+    public LayerMask enemyLayer;
 
     void Start()
     {
         Lifespan = 8;
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
         Alarm();
-	}
-
-    void Alarm()
-    {
-        Debug.Log("ALARM ALARM!");
-        // sound alarm;
     }
 
-    public override void CreateAggroZone()
+    void Update()
     {
-        Instantiate(_aggroPrefab, gameObject.transform);
+        if (Alarm())
+            Debug.Log("ALARM ALARM!");
     }
+
+    public bool Alarm()
+    {
+        return Physics.CheckSphere(transform.position, scanRange, enemyLayer);
+    }
+
+
 }
 
