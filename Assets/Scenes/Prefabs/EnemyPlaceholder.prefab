@@ -69,6 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7790067b86e721c4fb65ab2c4f77cd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  justSplit: 0
+  ATTACK_RATE: 0.2
+  DAMAGE_VALUE: 1
+  REGENERATION: 0.5
   selfPrefab: {fileID: 673796138763013903}
 --- !u!212 &4262906878771973004
 SpriteRenderer:
