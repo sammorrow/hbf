@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private GameObject startScreen;
     [SerializeField] private GameObject pauseScreen;
@@ -13,11 +13,13 @@ public class UIManager : MonoBehaviour
         startScreen.SetActive(false);
         pauseScreen.SetActive(false);
         gameScreen.SetActive(true);
+        GameManager.Instance.StartGame();
     }
 
     public void PauseGame(bool pause)
     {
         pauseScreen.SetActive(pause);
+        Time.timeScale = pause ? 0 : 1;
     }
 
     public void QuitGame()
@@ -35,12 +37,4 @@ public class UIManager : MonoBehaviour
         gameScreen.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Time.timeScale == 0)
-            PauseGame(true);
-        else
-            PauseGame(false);
-    }
 }

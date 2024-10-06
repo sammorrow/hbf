@@ -19,10 +19,16 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        Time.timeScale = 1;
         gameRunTime = 0;
         enemySpawnTime = 20; // TODO: tweak enemySpawnTime and Timer
         enemySpawnTimer = enemySpawnTime;
         Player.Instance.Initialize();
+    }
+
+    private void Start()
+    {
+        Time.timeScale = 0;
     }
 
     void FixedUpdate()
