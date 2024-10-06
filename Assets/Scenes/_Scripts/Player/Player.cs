@@ -38,6 +38,7 @@ public class Player : Singleton<Player>
         ammo[1] = 0;
         ammo[2] = 0;
         ammoType = 0;
+        creaturePrefab = prefabShot1;
         killCount = 0;
         // TODO: change position to be center of body?
     }
@@ -72,9 +73,23 @@ public class Player : Singleton<Player>
 
     private void SwitchAmmo()
     {
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             ammoType = (ammoType + 1) % 3;
+            switch (ammoType)
+            {
+                case 0: 
+                    creaturePrefab = prefabShot1;
+                    break;
+                case 1:
+                    creaturePrefab = prefabShot2;
+                    break;
+                case 2:
+                    creaturePrefab = prefabShot3;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 

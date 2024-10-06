@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e5a0c23817b4f124b9b1de7a28805d44, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3c7100e6a5e305f4ea33ae9e780c342f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e0c8cd9c8aa1aea45bc4e696f03be6ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4258,8 +4258,8 @@ MonoBehaviour:
   creaturePrefab: {fileID: 7151337822141544190, guid: ffe0a25588aed45e494a3902fe6f9afd, type: 3}
   worldObject: {fileID: 1386704928}
   prefabShot1: {fileID: 7151337822141544190, guid: ffe0a25588aed45e494a3902fe6f9afd, type: 3}
-  prefabShot2: {fileID: 0}
-  prefabShot3: {fileID: 0}
+  prefabShot2: {fileID: 7151337822141544190, guid: 9441677e8c9141d469e4d9926203649c, type: 3}
+  prefabShot3: {fileID: 7151337822141544190, guid: 33dbad9f7d56afd46be866285bc0137b, type: 3}
 --- !u!1 &1877259913
 GameObject:
   m_ObjectHideFlags: 0
