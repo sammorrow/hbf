@@ -20,8 +20,5 @@ public class CreatureJanitor : CreatureBase
         // if dead enemies in eat zone, clean em up
     }
 
-    public override void CreateAggroZone()
-    {
-    }
 }
 
