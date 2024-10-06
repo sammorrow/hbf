@@ -9,16 +9,15 @@ public class Player : Singleton<Player>
     public float health;
     public float[] ammo = new float[3]; // player has 3 types of ammo
     public float ammoType; // 0, 1, or 2
+    public int killCount;
 
     public bool IsDead;
-
 
     // Movement
     public float Speed = 7f;
 
     private float _horizontalInput;
     private float _verticalInput;
-
 
     [SerializeField] private CharacterController _characterController;
 
@@ -32,23 +31,28 @@ public class Player : Singleton<Player>
     [SerializeField] private GameObject prefabShot2;
     [SerializeField] private GameObject prefabShot3;
 
+    public void Initialize()
+    {
+        health = maxHealth;
+        ammo[0] = 0; // TODO: change starting ammo counts if necessary
+        ammo[1] = 0;
+        ammo[2] = 0;
+        ammoType = 0;
+        killCount = 0;
+        // TODO: change position to be center of body?
+    }
+
     void Start()
     {
         health = maxHealth;
         ammoType = 0;
     }
 
-    void FixedUpdate()
-    {
-
-        SwitchAmmo();
-        Move();
-
-    }
-
     // no fixedupdate, uses time.deltatime
     private void Update()
     {
+        Move();
+        SwitchAmmo();
         if (GameManager.Instance.GunCooldown > 0)
         {
             GameManager.Instance.GunCooldown -= Time.deltaTime / FIRE_RATE;
@@ -68,7 +72,7 @@ public class Player : Singleton<Player>
 
     private void SwitchAmmo()
     {
-        if (Input.GetButton("X"))
+        if (Input.GetKey(KeyCode.X))
         {
             ammoType = (ammoType + 1) % 3;
         }

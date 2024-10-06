@@ -13,10 +13,23 @@ public class GameManager : Singleton<GameManager>
     public const float GUN_COOLDOWN = 1;
     public float GunCooldown = 0;
 
+    public float enemySpawnTime;
+    public float enemySpawnTimer;
+    public float gameRunTime;
+
+    public void StartGame()
+    {
+        gameRunTime = 0;
+        enemySpawnTime = 20; // TODO: tweak enemySpawnTime and Timer
+        enemySpawnTimer = enemySpawnTime;
+        Player.Instance.Initialize();
+    }
 
     void FixedUpdate()
     {
         refreshUI();
+        enemySpawnTimer -= Time.deltaTime;
+        gameRunTime += Time.deltaTime;
     }
 
     void refreshUI()
