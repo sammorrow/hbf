@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     private float health;
-    private float splitHealthThreshold; // amount of health enemy needs to be able to split and reproduce
+    private float splitHealthThreshold = 10000; // amount of health enemy needs to be able to split and reproduce
     private float damageHealthThreshold; // min amount of health enemy needs to be able to start attacking body
     private float deadTime = 30; // how long the enemy will remain dead/removable for
     private float deadTimer;

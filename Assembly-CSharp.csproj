@@ -996,24 +996,18 @@
       <HintPath>Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
       <Private>False</Private>
     </Reference>
-<<<<<<< HEAD
-=======
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
       <Private>False</Private>
     </Reference>
->>>>>>> 1e3b5227a2b1c4558a58dd9d58237bc8e7207fa7
     <Reference Include="Unity.ProBuilder.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-<<<<<<< HEAD
-=======
     <Reference Include="Unity.InputSystem">
       <HintPath>Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
->>>>>>> 1e3b5227a2b1c4558a58dd9d58237bc8e7207fa7
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
       <Private>False</Private>

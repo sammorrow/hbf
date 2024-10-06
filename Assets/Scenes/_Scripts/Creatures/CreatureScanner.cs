@@ -4,9 +4,11 @@ using System.Collections;
 public class CreatureScanner : CreatureBase
 {
 
+    GameObject _aggroPrefab;
+
     void Start()
     {
-       // set up trigger zone around creature
+        Lifespan = 8;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,12 +18,13 @@ public class CreatureScanner : CreatureBase
 
     void Alarm()
     {
+        Debug.Log("ALARM ALARM!");
         // sound alarm;
     }
 
     public override void CreateAggroZone()
     {
-
+        Instantiate(_aggroPrefab, gameObject.transform);
     }
 }
 
