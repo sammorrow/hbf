@@ -62,11 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets/Scenes/_Scripts/Creatures/Creature.cs" />
     <Compile Include="Assets/Scenes/_Scripts/UI/MinimapCamera.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Shot/Shot1Behavior.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Player/Player.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureJanitor.cs" />
     <Compile Include="Assets/Scenes/_Scripts/UI/UIAmmo.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureFighter.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureShooter.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureScanner.cs" />
     <Compile Include="Assets/Scenes/_Scripts/UI/UIManager.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Utilities/Singleton.cs" />
@@ -983,6 +982,10 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
