@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8734477223953040080}
   - component: {fileID: 6945248252733222062}
   m_Layer: 0
-  m_Name: Creature
+  m_Name: Scanner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9effc9ad201fc44458151475637f0107, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d33cad254e5a47d9aaf5a80dda67e3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!114 &8734477223953040080
 MonoBehaviour:
