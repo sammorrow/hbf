@@ -4,10 +4,14 @@ using System.Collections;
 public class CreatureShooter : CreatureBase
 {
 
+    [SerializeField] private Animator _animator;
+
     public float ATTACK_RANGE = 4;
     public float FIRE_RATE = 1;
     public float fireTimer;
     public LayerMask enemyLayer;
+
+    private bool _isFiring = false;
 
     void Start()
     {
@@ -18,6 +22,11 @@ public class CreatureShooter : CreatureBase
     {
         // determine highest priority enemy, then
         Attack();
+    }
+
+    private void FixedUpdate()
+    {
+        RefreshAnimState();
     }
 
     void Attack()
@@ -60,15 +69,29 @@ public class CreatureShooter : CreatureBase
 
     private void Update()
     {
+        GameObject target = FindClosestVirus();
+        _isFiring = target;
+
         fireTimer -= Time.deltaTime;
         if (fireTimer < 0)
         {
             fireTimer = FIRE_RATE;
-            GameObject target = FindClosestVirus();
             if (target)
                 Shoot(target);
         }
         
+    }
+
+    private void RefreshAnimState()
+    {
+        if (_isFiring)
+        {
+            _animator.SetInteger("AnimState", 1);
+        }
+        else
+        {
+            _animator.SetInteger("AnimState", 0);
+        }
     }
 
 }
