@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : Singleton<Player>
 {
-    public float maxHealth = 100;
+    public const float MAX_HEALTH = 100;
     public float health;
     public float[] ammo = new float[3]; // player has 3 types of ammo
     public float ammoType; // 0, 1, or 2
@@ -33,7 +33,7 @@ public class Player : Singleton<Player>
 
     public void Initialize()
     {
-        health = maxHealth;
+        health = MAX_HEALTH;
         ammo[0] = 0; // TODO: change starting ammo counts if necessary
         ammo[1] = 0;
         ammo[2] = 0;
@@ -45,7 +45,7 @@ public class Player : Singleton<Player>
 
     void Start()
     {
-        health = maxHealth;
+        health = MAX_HEALTH;
         ammoType = 0;
     }
 

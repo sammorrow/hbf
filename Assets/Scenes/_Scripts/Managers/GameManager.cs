@@ -57,6 +57,7 @@ public class GameManager : Singleton<GameManager>
 
     void SpawnEnemy()
     {
+<<<<<<< HEAD
         Vector3 spawnLocation = Vector3.zero; // TODO: figure out where to spawn the enemy! randomly inside the body...
         Instantiate(enemyPrefab, spawnLocation, Quaternion.identity);
     }
@@ -66,3 +67,15 @@ public class GameManager : Singleton<GameManager>
         CooldownText.GetComponentInChildren<TMP_Text>().text = "cd:" + GunCooldown.ToString("G1");
     }
 }
+=======
+        Zone randomZone = ZoneManager.Instance.GetRandomZoneWeighted();
+        Vector3 spawnLocation = ZoneManager.GetRandomPointInZone(randomZone);
+        Instantiate(enemyPrefab, spawnLocation, new Quaternion(0, 180, 180, 0));
+    }
+
+    void refreshUI()
+    {
+        CooldownText.GetComponentInChildren<TMP_Text>().text = "cd:" + GunCooldown.ToString("G1");
+    }
+}
+>>>>>>> 6f3ed83c97b16606772152e6f7ba8128e8158dad

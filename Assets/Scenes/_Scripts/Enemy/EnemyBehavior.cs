@@ -43,12 +43,15 @@ public class EnemyBehavior : MonoBehaviour
         SetHealth(damageHealthThreshold);
     }
 
+<<<<<<< HEAD
     // Start is called before the first frame update
     void Start()
     {
         health = 1;
     }
 
+=======
+>>>>>>> 6f3ed83c97b16606772152e6f7ba8128e8158dad
     // Update is called once per frame
     void Update()
     {
