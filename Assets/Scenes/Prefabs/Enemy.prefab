@@ -74,17 +74,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   justSplit: 0
   health: 0
-<<<<<<< HEAD
   ATTACK_RATE: 1
   DAMAGE_VALUE: 1
   REGENERATION: 0.5
   ATTACK_COOLDOWN: 3
-=======
-  ATTACK_RATE: 0.2
-  DAMAGE_VALUE: 10000
-  REGENERATION: 10
-  ATTACK_COOLDOWN: 5
->>>>>>> dcafccfb538da74c5258b1d46c314e77faef7941
   SPEED: 8
   virusDamageSound: {fileID: -2137238550953063339}
   virusSplitSound: {fileID: 4404669343598033707}
