@@ -13,10 +13,11 @@ public class CreatureScanner : CreatureBase
     private Collider[] _detectedEnemies = Array.Empty<Collider>();
 
     [SerializeField] private Animator _animator;
+    private Tween tween;
 
     void Start()
     {
-        transform.DORotate(new Vector3(-90, 0f, -180 + Random.Range(-25, 25)), 3).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+        tween = transform.DORotate(new Vector3(-90, 0f, -180 + Random.Range(-25, 25)), 3).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
         Lifespan = 60;
     }
 
@@ -39,6 +40,11 @@ public class CreatureScanner : CreatureBase
             _detectedEnemies = potentialThreats;
         }
 
+    }
+
+    void OnDestroy()
+    {
+        tween.Kill(true);
     }
 
     IEnumerator Alarm()

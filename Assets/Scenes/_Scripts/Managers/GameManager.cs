@@ -10,13 +10,13 @@ public class GameManager : Singleton<GameManager>
 {
     public GameObject CooldownText;
 
-    public const float BASE_SPAWN_TIME = 30;
+    public const float BASE_SPAWN_TIME = 20;
 
     public float enemySpawnTime;
     public float enemySpawnTimer;
     public float gameRunTime;
-
     public int KillCount = 0;
+    public float SurvivalTime = 0;
 
     [SerializeField] private GameObject enemyPrefab;
 
@@ -52,6 +52,7 @@ public class GameManager : Singleton<GameManager>
             SpawnEnemy();
             enemySpawnTimer = enemySpawnTime;
         }
+        SurvivalTime += Time.fixedDeltaTime;
     }
 
     void SpawnEnemy()

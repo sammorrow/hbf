@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scenes\_Scripts\Utilities\Singleton.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Player\CharacterController.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureBase.cs" />
+    <Compile Include="Assets\Scenes\_Scripts\UI\UITimeSurvived.cs" />
     <Compile Include="Assets\Scenes\_Scripts\UI\Debug.cs" />
     <Compile Include="Assets\Scenes\_Scripts\UI\HealthBar.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Managers\GameManager.cs" />
