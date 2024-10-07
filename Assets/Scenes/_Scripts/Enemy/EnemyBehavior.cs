@@ -19,6 +19,9 @@ public class EnemyBehavior : MonoBehaviour
 
 	public float SPEED = 4;
 
+	public AudioSource virusDamageSound;
+    public AudioSource virusSplitSound;
+
     [SerializeField] private Animator _animator;
 
 	[SerializeField] private SpriteRenderer _spriteRenderer;
@@ -60,10 +63,13 @@ public class EnemyBehavior : MonoBehaviour
 	public void DamageVirus(float damageValue)
 	{
 		health -= damageValue;
-		if (health <= 0)
-			Debug.Log("it's dead?");
-			_spriteRenderer.sprite = deadSprite;
-			deadTimer = 0;
+		virusDamageSound.Play();
+        if (health <= 0)
+		{
+            Debug.Log("it's dead?");
+            _spriteRenderer.sprite = deadSprite;
+            deadTimer = 0;
+        }
 	}
 
 	void SetHealth(float newHealthValue)
@@ -73,7 +79,8 @@ public class EnemyBehavior : MonoBehaviour
 
 	void Split()
 	{
-		GameObject newEnemy = Instantiate(selfPrefab, transform.position, Quaternion.Euler(90, 0, 0)); // split the enemy (create new copy) and set its health = damageHealthThreshold
+		virusSplitSound.Play();
+        GameObject newEnemy = Instantiate(selfPrefab, transform.position, Quaternion.Euler(90, 0, 0)); // split the enemy (create new copy) and set its health = damageHealthThreshold
 		newEnemy.GetComponent<EnemyBehavior>().justSplit = true;
 		SetHealth(damageHealthThreshold);
 	}

@@ -38,8 +38,11 @@ public class Player : Singleton<Player>
     // Recharge ammo
     public GameObject rechargeZone;
     public UIAmmo uiAmmo;
-    public float RECHARGE_RATE = 1;
+    public float RECHARGE_RATE = .5f;
     public float rechargeTimer;
+
+    public AudioSource bodyDamageSound;
+    public AudioSource reloadSound;
 
     public void Initialize()
     {
@@ -66,13 +69,22 @@ public class Player : Singleton<Player>
     {
         if (other.gameObject == rechargeZone)
         {
-            rechargeTimer -= Time.deltaTime;
+            rechargeTimer -= RECHARGE_RATE * Time.deltaTime;
             if (rechargeTimer <= 0)
             {
                 rechargeTimer = 1;
+                bool reloaded = false;
                 for (int i = 0; i < 3; i++)
+                {
                     if (ammo[i] < maxAmmo[i])
+                    {
                         ammo[i]++;
+                        reloaded = true;
+                    }
+                }
+
+                if (reloaded)
+                    reloadSound.Play();
 
                 uiAmmo.UpdateUIAmmo();
             }
@@ -151,6 +163,7 @@ public class Player : Singleton<Player>
     public void DamagePlayer(float damageValue)
     {
         health -= damageValue;
+        bodyDamageSound.Play();
         if (health <= 0)
             GameManager.Instance.EndGame();
     }
