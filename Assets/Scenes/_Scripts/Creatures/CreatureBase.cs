@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class CreatureBase : MonoBehaviour
 {
 
-    protected const float BASE_CREATURE_LIFESPAN = 15;
+    protected const float BASE_CREATURE_LIFESPAN = 10;
 
     public float Lifespan = BASE_CREATURE_LIFESPAN;
 
@@ -15,11 +15,13 @@ public abstract class CreatureBase : MonoBehaviour
         Lifespan -= Time.deltaTime;
 
         if (Lifespan < 0)
-            Destroy(gameObject);
+            StartCoroutine(Die());
     }
 
-    private void OnTriggerEnter(Collider other)
+    IEnumerator Die()
     {
-        // TBD, base collision logic
+        gameObject.GetComponent<Animator>().SetTrigger("Death");
+        yield return new WaitForSeconds(0.25f);
+        Destroy(gameObject);
     }
 }

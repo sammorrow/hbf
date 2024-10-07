@@ -12,15 +12,18 @@ public class CreatureScanner : CreatureBase
     public LayerMask enemyLayer;
     private Collider[] _detectedEnemies = Array.Empty<Collider>();
 
+    [SerializeField] private Animator _animator;
+
     void Start()
     {
-      transform.DORotate(new Vector3(-90, 0f, -180 + Random.Range(-25, 25)), 3).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
-      Lifespan = 60;
+        transform.DORotate(new Vector3(-90, 0f, -180 + Random.Range(-25, 25)), 3).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+        Lifespan = 60;
     }
 
     new void Update()
     {
         DetectEnemies();
+        base.Update();
     }
 
     public void DetectEnemies()
