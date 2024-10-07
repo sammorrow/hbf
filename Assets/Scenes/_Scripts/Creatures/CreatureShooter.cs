@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UIElements;
 
 public class CreatureShooter : CreatureBase
 {
@@ -17,7 +18,7 @@ public class CreatureShooter : CreatureBase
 
     void Start()
     {
-        // set up trigger zone around creature
+        
     }
 
     private void FixedUpdate()
@@ -51,10 +52,10 @@ public class CreatureShooter : CreatureBase
 
     private void Shoot(GameObject targetVirus)
     {
-        Debug.Log("Shooting at " + targetVirus);
-
         fireTimer = FIRE_RATE;
-        GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(90, 0, 0));
+        float angleOffset = Vector3.SignedAngle(new Vector3(0, 0, 1), targetVirus.transform.position - transform.position, new Vector3(0, 1, 0));
+        transform.rotation = Quaternion.Euler(90, angleOffset - 15, 0);
+        GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         newProjectile.GetComponent<ProjectileBehavior>().targetVirus = targetVirus;
         // spawn projectile aimed at target (transform)
     }

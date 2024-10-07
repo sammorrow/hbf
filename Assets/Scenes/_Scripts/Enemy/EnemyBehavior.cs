@@ -25,9 +25,12 @@ public class EnemyBehavior : MonoBehaviour
 
     public void DamageVirus(float damageValue)
     {
-        health -= damageValue;
-        if (health <= 0)
-            deadTimer = 0;
+        if (health > 0)
+        {
+            health -= damageValue;
+            if (health <= 0)
+                deadTimer = 0;
+        }
     }
 
     void SetHealth(float newHealthValue)
