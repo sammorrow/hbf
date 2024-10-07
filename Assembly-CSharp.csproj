@@ -66,6 +66,7 @@
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureJanitor.cs" />
     <Compile Include="Assets/Scenes/_Scripts/UI/UIAmmo.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureShooter.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/World/Heart.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureScanner.cs" />
     <Compile Include="Assets/Scenes/_Scripts/UI/UIManager.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Utilities/Singleton.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets/Scenes/_Scripts/UI/HealthBar.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Managers/GameManager.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Enemy/EnemyBehavior.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/World/Zone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -1000,16 +1002,20 @@
       <HintPath>Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-      <HintPath>Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+      <HintPath>Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.InputSystem.ForUI">
+      <HintPath>Library/ScriptAssemblies/Unity.InputSystem.ForUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
@@ -1030,10 +1036,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>Library/ScriptAssemblies/Unity.InputSystem.ForUI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
