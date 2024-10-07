@@ -14,11 +14,12 @@ public class EnemyBehavior : MonoBehaviour
 	public float ATTACK_RATE = 0.5f;
 	public float DAMAGE_VALUE = 1;
 	public float REGENERATION = .5f;
+    public float ATTACK_COOLDOWN = 5f; 
 	private float attackCooldown;
 
-	public float ATTACK_COOLDOWN = 5f;
+	public float SPEED = 1;
 
-	[SerializeField] private Animator _animator;
+    [SerializeField] private Animator _animator;
 
 	[SerializeField] private SpriteRenderer _spriteRenderer;
 	public Sprite babySprite;
@@ -30,7 +31,22 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
+        int direction = Random.Range(0, 4);
+        switch (direction)
+        {
+            case 0:
+                transform.position = new Vector3(transform.position.x, 0, transform.position.y + SPEED * Time.deltaTime);
+                break;
+            case 1:
+                transform.position = new Vector3(transform.position.x - SPEED * Time.deltaTime, 0, transform.position.y);
+                break;
+            case 2:
+                transform.position = new Vector3(transform.position.x, 0, transform.position.y - SPEED * Time.deltaTime);
+                break;
+            case 3:
+                transform.position = new Vector3(transform.position.x + SPEED * Time.deltaTime, 0, transform.position.y);
+                break;
+        }
     }
 
     public float GetHealth()

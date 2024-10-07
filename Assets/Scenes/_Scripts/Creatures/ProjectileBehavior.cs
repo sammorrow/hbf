@@ -9,9 +9,9 @@ public class ProjectileBehavior : MonoBehaviour
     public float SPEED = 1;
     public float DAMAGE = 20;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider coll)
     {
-        if (collision.gameObject == targetVirus)
+        if (coll.gameObject == targetVirus)
         {
             targetVirus.GetComponent<EnemyBehavior>().DamageVirus(DAMAGE);
             Destroy(this.gameObject);
