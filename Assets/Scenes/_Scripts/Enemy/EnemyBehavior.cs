@@ -66,7 +66,6 @@ public class EnemyBehavior : MonoBehaviour
 		virusDamageSound.Play();
         if (health <= 0)
 		{
-			_spriteRenderer.sprite = deadSprite;
 			deadTimer = 0;
         }
 	}
@@ -128,7 +127,8 @@ public class EnemyBehavior : MonoBehaviour
 		}
 		if (health <= 0)
 		{
-			if (deadTime > deadTimer) 
+			_spriteRenderer.sprite = deadSprite;
+           if (deadTime > deadTimer) 
 				deadTimer += Time.deltaTime; // if dead AND deadTime > deadTimer, increment deadTimer
 			else {
 				health = 1; // if dead AND deadTime <= deadTimer, set health to 1 (resurrect)
