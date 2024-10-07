@@ -122,11 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetVirus: {fileID: 0}
-  SPEED: 1
-  DAMAGE: 20
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 0
+  SPEED: 4
+  DAMAGE: 5
 --- !u!136 &5177943234709460057
 CapsuleCollider:
   m_ObjectHideFlags: 0
