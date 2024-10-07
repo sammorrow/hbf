@@ -12,10 +12,10 @@ public class CreatureScanner : CreatureBase
 
     void Start()
     {
-        Lifespan = 8;
+        Lifespan = 60;
     }
 
-    void Update()
+    new void Update()
     {
         DetectEnemies();
     }
@@ -43,7 +43,6 @@ public class CreatureScanner : CreatureBase
             {
                 var affectedZone = ZoneManager.Instance.GetZoneByPos(enemy.transform.position);
                 affectedZone.SoundAlarm();
-                Debug.Log(affectedZone);
             }
             yield return new WaitForSeconds(ALARM_CYCLE);
         }

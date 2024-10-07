@@ -7,8 +7,8 @@ public class Zone : MonoBehaviour
     public float spawnChance = .5f;
     public float damageMultiplier = 1f;
 
-    public Material _alarmMaterial;
-    public Material _defaultMaterial;
+    private Material _alarmMaterial;
+    private Material _defaultMaterial;
 
     private const float ALARM_CYCLE = 0.5f; 
 
@@ -30,9 +30,7 @@ public class Zone : MonoBehaviour
     IEnumerator Alarm()
     {
         gameObject.GetComponent<MeshRenderer>().SetMaterials(new List<Material> { _alarmMaterial });
-        Debug.Log("applied material", _alarmMaterial);
         yield return new WaitForSeconds(ALARM_CYCLE);
-        Debug.Log("removed material", _alarmMaterial);
         gameObject.GetComponent<MeshRenderer>().SetMaterials(new List<Material> { _defaultMaterial });
         yield return new WaitForSeconds(ALARM_CYCLE);
         _isAlarmed = false;

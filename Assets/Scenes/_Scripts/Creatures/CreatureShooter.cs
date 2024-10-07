@@ -60,7 +60,7 @@ public class CreatureShooter : CreatureBase
         // spawn projectile aimed at target (transform)
     }
 
-    private void Update()
+    new private void Update()
     {
         GameObject target = FindClosestVirus();
         _isFiring = target;
@@ -72,7 +72,8 @@ public class CreatureShooter : CreatureBase
             if (target)
                 Shoot(target);
         }
-        
+
+        base.Update();
     }
 
     private void RefreshAnimState()

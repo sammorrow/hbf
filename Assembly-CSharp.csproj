@@ -65,6 +65,7 @@
     <Compile Include="Assets/Scenes/_Scripts/Player/Player.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureJanitor.cs" />
     <Compile Include="Assets/Scenes/_Scripts/UI/UIAmmo.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/UI/UIKillCount.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureShooter.cs" />
     <Compile Include="Assets/Scenes/_Scripts/World/Heart.cs" />
     <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureScanner.cs" />
