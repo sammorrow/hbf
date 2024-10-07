@@ -8,8 +8,10 @@ public class CreatureJanitor : CreatureBase
 
     public float ATTACK_RANGE = 175;
     // this is tied (but not coupled) to animation length; don't change one without the other
-    public float BOMB_FUSE = 1f;
+    private float BOMB_FUSE = 2f;
     public LayerMask enemyLayer;
+
+    public AudioSource explosionSound;
 
     void Start()
     {
@@ -30,6 +32,9 @@ public class CreatureJanitor : CreatureBase
                 GameManager.Instance.KillCount++;
             }
         }
+        explosionSound.Play();
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.75f);
         Destroy(gameObject);
     }
 

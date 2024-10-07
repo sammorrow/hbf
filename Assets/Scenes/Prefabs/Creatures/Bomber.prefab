@@ -105,10 +105,10 @@ MonoBehaviour:
   Lifespan: 3
   _animator: {fileID: 3247802204360211601}
   ATTACK_RANGE: 15
-  BOMB_FUSE: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  explosionSound: {fileID: -1841178914427544999}
 --- !u!95 &3247802204360211601
 Animator:
   serializedVersion: 5

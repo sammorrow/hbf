@@ -60,26 +60,25 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.30f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scenes\_Scripts\Managers\ZoneManager.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\UI\MinimapCamera.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureJanitor.cs" />
-    <Compile Include="Assets\KillCount.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\UI\UIAmmo.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\UI\UIKillCount.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureShooter.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\World\Heart.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureScanner.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\UI\UIManager.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Utilities\Singleton.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Player\CharacterController.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureBase.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\UI\Debug.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\UI\HealthBar.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Managers\GameManager.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Enemy\EnemyBehavior.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\World\Zone.cs" />
-    <Compile Include="Assets\Scenes\_Scripts\Creatures\ProjectileBehavior.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Managers/ZoneManager.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/UI/MinimapCamera.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Player/Player.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureJanitor.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/UI/UIAmmo.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/UI/UIKillCount.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureShooter.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/World/Heart.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureScanner.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/UI/UIManager.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Utilities/Singleton.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Player/CharacterController.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureBase.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/UI/Debug.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/UI/HealthBar.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Managers/GameManager.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Enemy/EnemyBehavior.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/World/Zone.cs" />
+    <Compile Include="Assets/Scenes/_Scripts/Creatures/ProjectileBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

@@ -66,9 +66,8 @@ public class EnemyBehavior : MonoBehaviour
 		virusDamageSound.Play();
         if (health <= 0)
 		{
-            Debug.Log("it's dead?");
-            _spriteRenderer.sprite = deadSprite;
-            deadTimer = 0;
+			_spriteRenderer.sprite = deadSprite;
+			deadTimer = 0;
         }
 	}
 
