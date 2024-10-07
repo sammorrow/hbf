@@ -24,6 +24,22 @@ public class ZoneManager : Singleton<ZoneManager>
 
     }
 
+    public Zone GetZoneByPos(Vector3 pos)
+    {
+        var zoneArr = zonesParent.GetComponentsInChildren<Zone>();
+        Zone zone = null;
+
+        foreach (Zone z in zoneArr)
+        {
+            if (z.GetComponent<MeshCollider>().bounds.Contains(pos))
+            {
+                zone = z;
+            }
+        }
+        return zone;
+
+    }
+
     public Zone GetRandomZoneWeighted()
     {
         var zoneArr = zonesParent.GetComponentsInChildren<Zone>();

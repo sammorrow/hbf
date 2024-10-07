@@ -90,7 +90,8 @@ public class EnemyBehavior : MonoBehaviour
 			if (attackCooldown <= 0)
 			{
 				_animator.SetTrigger("Biting");
-				Player.Instance.DamagePlayer(DAMAGE_VALUE);
+				Zone affectedZone = ZoneManager.Instance.GetZoneByPos(gameObject.transform.position);
+				Player.Instance.DamagePlayer(DAMAGE_VALUE * affectedZone.damageMultiplier);
 				attackCooldown = ATTACK_COOLDOWN;
 			}
 
