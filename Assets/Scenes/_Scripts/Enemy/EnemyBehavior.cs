@@ -81,8 +81,9 @@ public class EnemyBehavior : MonoBehaviour
 			health += REGENERATION * Time.deltaTime;
 			float enemySize = (2 * health / splitHealthThreshold) + .5f;
 			transform.localScale = new Vector3(enemySize, enemySize, 1);
+            _spriteRenderer.sprite = deadSprite;
 		}
-		if (health > damageHealthThreshold)
+        if (health > damageHealthThreshold)
 		{
 			if (_spriteRenderer.sprite != adultSprite)
 			{

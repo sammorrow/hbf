@@ -15,7 +15,11 @@ TagManager:
   - Enemy
   - EditorOnly
   - Projectile
+<<<<<<< HEAD
   - Recharge
+=======
+  - Scanner
+>>>>>>> d2cd71d04f76d52c5220b51ce4d710ec6722b043
   - 
   - 
   - 
