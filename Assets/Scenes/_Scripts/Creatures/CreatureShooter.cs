@@ -15,6 +15,7 @@ public class CreatureShooter : CreatureBase
     private bool _isFiring = false;
 
     [SerializeField] private GameObject projectilePrefab;
+    public AudioSource projectileSound;
 
     void Start()
     {
@@ -57,6 +58,7 @@ public class CreatureShooter : CreatureBase
         transform.rotation = Quaternion.Euler(90, angleOffset - 15, 0);
         GameObject newProjectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
         newProjectile.GetComponent<ProjectileBehavior>().targetVirus = targetVirus;
+        projectileSound.Play();
         // spawn projectile aimed at target (transform)
     }
 
