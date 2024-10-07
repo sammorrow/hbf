@@ -18,6 +18,8 @@ public class GameManager : Singleton<GameManager>
     public float enemySpawnTimer;
     public float gameRunTime;
 
+    public float KillCount = 0;
+
     [SerializeField] private GameObject enemyPrefab;
 
     public void StartGame()

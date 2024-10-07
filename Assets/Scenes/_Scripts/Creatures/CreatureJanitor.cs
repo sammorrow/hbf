@@ -4,21 +4,34 @@ using System.Collections;
 public class CreatureJanitor : CreatureBase
 {
 
+    [SerializeField] private Animator _animator;
+
+    public float ATTACK_RANGE = 175;
+    // this is tied (but not coupled) to animation length; don't change one without the other
+    public float BOMB_FUSE = 1f;
+    public float fireTimer;
+    public LayerMask enemyLayer;
+
     void Start()
     {
-        // set up trigger zone around creature
+        StartCoroutine(Boom());
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // determine priority??? then
-        Eat();
-    }
 
-    void Eat()
+    IEnumerator Boom()
     {
-        // if dead enemies in eat zone, clean em up
+        yield return new WaitForSeconds(BOMB_FUSE);
+
+        Collider[] targets = Physics.OverlapSphere(transform.position, ATTACK_RANGE, enemyLayer);
+        foreach (Collider virus in targets)
+        {
+            if (virus.gameObject.GetComponent<EnemyBehavior>().GetHealth() <= 0)
+            {
+                Destroy(virus.gameObject);
+                GameManager.Instance.KillCount++;
+            }
+        }
+        Destroy(gameObject);
     }
 
 }
-

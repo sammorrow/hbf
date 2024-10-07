@@ -27,6 +27,11 @@ public class Player : Singleton<Player>
     public Transform creatureSpawnTransform;
     public GameObject creaturePrefab, worldObject;
 
+    // it's gross but it works
+    public GameObject selectedAmmoHighlight1;
+    public GameObject selectedAmmoHighlight2;
+    public GameObject selectedAmmoHighlight3;
+
     [SerializeField] private GameObject prefabShot1;
     [SerializeField] private GameObject prefabShot2;
     [SerializeField] private GameObject prefabShot3;
@@ -76,16 +81,23 @@ public class Player : Singleton<Player>
         if (Input.GetKeyDown(KeyCode.X))
         {
             ammoType = (ammoType + 1) % 3;
+            selectedAmmoHighlight1.SetActive(false);
+            selectedAmmoHighlight2.SetActive(false);
+            selectedAmmoHighlight3.SetActive(false);
+
             switch (ammoType)
             {
                 case 0: 
                     creaturePrefab = prefabShot1;
+                    selectedAmmoHighlight1.SetActive(true);
                     break;
                 case 1:
                     creaturePrefab = prefabShot2;
+                    selectedAmmoHighlight2.SetActive(true);
                     break;
                 case 2:
                     creaturePrefab = prefabShot3;
+                    selectedAmmoHighlight3.SetActive(true);
                     break;
                 default:
                     break;
