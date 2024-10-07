@@ -52,7 +52,7 @@ public class GameManager : Singleton<GameManager>
         gameRunTime += Time.deltaTime;
         if (enemySpawnTimer < 0)
         {
-            //SpawnEnemy();
+            SpawnEnemy();
             enemySpawnTimer = enemySpawnTime;
         }
     }

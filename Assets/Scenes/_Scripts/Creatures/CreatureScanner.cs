@@ -1,45 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class CreatureScanner : CreatureBase
 {
 
-    public float scanRange = 10;
+    public float scanRange = 1000;
     public float ALARM_CYCLE = 1;
     public LayerMask enemyLayer;
-    private bool _enemyAround = false;
+    private Collider[] _detectedEnemies = Array.Empty<Collider>();
 
     void Start()
     {
         Lifespan = 8;
-        if (IsEnemyDetected())
-            _enemyAround = true;
-            StartCoroutine(Alarm());
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (IsEnemyDetected())
-            StartCoroutine(Alarm());
     }
 
     void Update()
     {
-        if (!IsEnemyDetected())
-            _enemyAround = false;
+        DetectEnemies();
     }
 
-    public bool IsEnemyDetected()
+    public void DetectEnemies()
     {
-        return Physics.CheckSphere(transform.position, scanRange, enemyLayer);
+        Collider[] potentialThreats = Physics.OverlapSphere(transform.position, scanRange, enemyLayer);
+        if (potentialThreats.Length > 0 && _detectedEnemies.Length == 0)
+        {
+            _detectedEnemies = potentialThreats;
+            StartCoroutine(Alarm());
+        }
+        if (_detectedEnemies.Length != potentialThreats.Length)
+        {
+            _detectedEnemies = potentialThreats;
+        }
+
     }
 
     IEnumerator Alarm()
     {
-        while (_enemyAround)
+        while (_detectedEnemies.Length > 0)
         {
-            Debug.Log("ALARM!!");
+            foreach (Collider enemy in _detectedEnemies)
+            {
+                var affectedZone = ZoneManager.Instance.GetZoneByPos(enemy.transform.position);
+                affectedZone.SoundAlarm();
+                Debug.Log(affectedZone);
+            }
             yield return new WaitForSeconds(ALARM_CYCLE);
         }
     }

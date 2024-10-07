@@ -6,6 +6,7 @@ public class ZoneManager : Singleton<ZoneManager>
 {
 
     public GameObject zonesParent;
+    public Material AlarmMaterial;
 
 
     public void OnVirusDetected(Vector3 pos)
