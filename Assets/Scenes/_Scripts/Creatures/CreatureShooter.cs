@@ -6,22 +6,18 @@ public class CreatureShooter : CreatureBase
 
     [SerializeField] private Animator _animator;
 
-    public float ATTACK_RANGE = 4;
+    public float ATTACK_RANGE = 15;
     public float FIRE_RATE = 1;
     public float fireTimer;
     public LayerMask enemyLayer;
 
     private bool _isFiring = false;
 
+    [SerializeField] private GameObject projectilePrefab;
+
     void Start()
     {
         // set up trigger zone around creature
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // determine highest priority enemy, then
-        Attack();
     }
 
     private void FixedUpdate()
@@ -29,11 +25,6 @@ public class CreatureShooter : CreatureBase
         RefreshAnimState();
     }
 
-    void Attack()
-    {
-        fireTimer = FIRE_RATE;
-        // TODO: spawn projectile aimed at target (transform)
-    }
 
     private GameObject FindClosestVirus()
     {
@@ -61,7 +52,11 @@ public class CreatureShooter : CreatureBase
     private void Shoot(GameObject targetVirus)
     {
         Debug.Log("Shooting at " + targetVirus);
-        // TODO: spawn a projectile prefab that moves towards enemy and can collide
+
+        fireTimer = FIRE_RATE;
+        GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(90, 0, 0));
+        newProjectile.GetComponent<ProjectileBehavior>().targetVirus = targetVirus;
+        // spawn projectile aimed at target (transform)
     }
 
     private void Update()
