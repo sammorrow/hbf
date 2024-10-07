@@ -38,11 +38,12 @@ public class Player : Singleton<Player>
     // Recharge ammo
     public GameObject rechargeZone;
     public UIAmmo uiAmmo;
-    public float RECHARGE_RATE = .5f;
+    public float RECHARGE_RATE = .25f;
     public float rechargeTimer;
 
     public AudioSource bodyDamageSound;
     public AudioSource reloadSound;
+    public AudioSource switchAmmoSound;
 
     public void Initialize()
     {
@@ -105,16 +106,8 @@ public class Player : Singleton<Player>
 
         Move();
         SwitchAmmo();
-        if (GameManager.Instance.GunCooldown > 0)
-        {
-            GameManager.Instance.GunCooldown -= Time.deltaTime / FIRE_RATE;
-        }
-
-        if (Input.GetMouseButtonDown(0) && GameManager.Instance.GunCooldown <= 0)
-        {
-            GameManager.Instance.GunCooldown = GameManager.GUN_COOLDOWN;
+        if (Input.GetMouseButtonDown(0))
             Shoot();
-        }
     }
 
     void Shoot()
@@ -134,6 +127,7 @@ public class Player : Singleton<Player>
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
+            switchAmmoSound.Play();
             ammoType = (ammoType + 1) % 3;
             selectedAmmoHighlight1.SetActive(false);
             selectedAmmoHighlight2.SetActive(false);

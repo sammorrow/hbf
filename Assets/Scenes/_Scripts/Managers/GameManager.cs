@@ -10,9 +10,7 @@ public class GameManager : Singleton<GameManager>
 {
     public GameObject CooldownText;
 
-    public const float GUN_COOLDOWN = 1;
     public const float BASE_SPAWN_TIME = 20;
-    public float GunCooldown = 0;
 
     public float enemySpawnTime;
     public float enemySpawnTimer;
@@ -44,7 +42,6 @@ public class GameManager : Singleton<GameManager>
 
     void FixedUpdate()
     {
-        refreshUI();
         enemySpawnTime -= Time.deltaTime / 100; // makes enemies spawn slightly faster over time
         // TODO: work on better algorithm for this! 
 
@@ -62,10 +59,5 @@ public class GameManager : Singleton<GameManager>
         Zone randomZone = ZoneManager.Instance.GetRandomZoneWeighted();
         Vector3 spawnLocation = ZoneManager.GetRandomPointInZone(randomZone);
         Instantiate(enemyPrefab, spawnLocation, new Quaternion(0, 180, 180, 0));
-    }
-
-    void refreshUI()
-    {
-        CooldownText.GetComponentInChildren<TMP_Text>().text = "cd:" + GunCooldown.ToString("G1");
     }
 }
