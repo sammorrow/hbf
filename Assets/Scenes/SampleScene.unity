@@ -26943,7 +26943,7 @@ MonoBehaviour:
   ammoType: 0
   killCount: 0
   IsDead: 0
-  Speed: 15
+  Speed: 18
   _selfController: {fileID: 1866201283}
   _characterController: {fileID: 1044797516}
   FIRE_RATE: 0.7

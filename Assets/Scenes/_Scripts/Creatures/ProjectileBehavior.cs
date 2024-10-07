@@ -7,7 +7,7 @@ public class ProjectileBehavior : MonoBehaviour
 {
     public GameObject targetVirus = null;
     public float SPEED = 1;
-    public float DAMAGE = 20;
+    public float DAMAGE = 10;
 
     private void OnTriggerEnter(Collider coll)
     {

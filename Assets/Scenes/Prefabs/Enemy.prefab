@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   justSplit: 0
   health: 0
-  ATTACK_RATE: 0.2
+  ATTACK_RATE: 1
   DAMAGE_VALUE: 1
   REGENERATION: 0.5
   ATTACK_COOLDOWN: 5

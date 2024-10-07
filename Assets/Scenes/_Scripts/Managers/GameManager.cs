@@ -10,7 +10,7 @@ public class GameManager : Singleton<GameManager>
 {
     public GameObject CooldownText;
 
-    public const float BASE_SPAWN_TIME = 20;
+    public const float BASE_SPAWN_TIME = 30;
 
     public float enemySpawnTime;
     public float enemySpawnTimer;

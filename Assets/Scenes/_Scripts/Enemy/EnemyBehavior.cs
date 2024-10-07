@@ -11,10 +11,10 @@ public class EnemyBehavior : MonoBehaviour
 	private float damageHealthThreshold = 25; // min amount of health enemy needs to be able to start attacking body
 	private float deadTime = 30; // how long the enemy will remain dead/removable for
 	private float deadTimer;
-	public float ATTACK_RATE = 0.5f;
+	public float ATTACK_RATE = 1f;
 	public float DAMAGE_VALUE = 1;
 	public float REGENERATION = .5f;
-    public float ATTACK_COOLDOWN = 5f; 
+    public float ATTACK_COOLDOWN = 7.5f; 
 	private float attackCooldown;
 
 	public float SPEED = 4;

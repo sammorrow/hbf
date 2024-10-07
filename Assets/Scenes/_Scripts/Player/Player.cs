@@ -15,7 +15,7 @@ public class Player : Singleton<Player>
     public bool IsDead;
 
     // Movement
-    public float Speed = 7f;
+    public float Speed = 18f;
 
     [SerializeField] private CharacterController _selfController;
     [SerializeField] private CharacterController _characterController;
@@ -48,12 +48,12 @@ public class Player : Singleton<Player>
     public void Initialize()
     {
         health = MAX_HEALTH;
-        ammo[0] = 3; // TODO: change starting ammo counts if necessary
-        ammo[1] = 3;
-        ammo[2] = 3;
+        ammo[0] = 10;
+        ammo[1] = 10;
+        ammo[2] = 8;
         maxAmmo[0] = 10; // use these in ammo refill
         maxAmmo[1] = 10;
-        maxAmmo[2] = 10;
+        maxAmmo[2] = 8;
         ammoType = 0;
         creaturePrefab = prefabShot1;
         killCount = 0;

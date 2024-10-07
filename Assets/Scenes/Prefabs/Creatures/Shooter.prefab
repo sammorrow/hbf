@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lifespan: 15
   _animator: {fileID: 8636496094154694203}
-  ATTACK_RANGE: 10
+  ATTACK_RANGE: 15
   FIRE_RATE: 1
   fireTimer: 0
   enemyLayer:
