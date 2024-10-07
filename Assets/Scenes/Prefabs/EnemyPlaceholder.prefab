@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3811472943538407695}
   - component: {fileID: -6929597228567120459}
   - component: {fileID: 4262906878771973004}
+  - component: {fileID: 5334959650098542072}
   m_Layer: 6
   m_Name: EnemyPlaceholder
   m_TagString: Untagged
@@ -74,6 +75,10 @@ MonoBehaviour:
   ATTACK_RATE: 0.2
   DAMAGE_VALUE: 1
   REGENERATION: 0.5
+  _animator: {fileID: 5334959650098542072}
+  _spriteRenderer: {fileID: 4262906878771973004}
+  babySprite: {fileID: 21300000, guid: 12c44a5e03f65401c95f59d73cb74dff, type: 3}
+  adultSprite: {fileID: 21300000, guid: 9effc9ad201fc44458151475637f0107, type: 3}
   selfPrefab: {fileID: 673796138763013903}
 --- !u!212 &4262906878771973004
 SpriteRenderer:
@@ -125,5 +130,26 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!95 &5334959650098542072
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673796138763013903}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31de8297b052b417e867bc120a7d3ea3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

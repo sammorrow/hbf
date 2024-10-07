@@ -14,7 +14,7 @@ public class HealthBar : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         CurrentHealth.fillAmount = Player.Instance.health / Player.MAX_HEALTH;    
     }

@@ -11,12 +11,21 @@ public class EnemyBehavior : MonoBehaviour
     private float damageHealthThreshold = 25; // min amount of health enemy needs to be able to start attacking body
     private float deadTime = 30; // how long the enemy will remain dead/removable for
     private float deadTimer;
-    public float ATTACK_RATE = .2f;
+    public float ATTACK_RATE = 0.5f;
     public float DAMAGE_VALUE = 1;
     public float REGENERATION = .5f;
     private float attackCooldown;
 
+    public float ATTACK_COOLDOWN = 5f;
+
+    [SerializeField] private Animator _animator;
+
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    public Sprite babySprite;
+    public Sprite adultSprite;
+
     [SerializeField] GameObject selfPrefab; // used when enemy splits/duplicates
+
 
     public float GetHealth()
     {
@@ -46,7 +55,9 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = 1;
+        health = 30;
+        _animator.enabled = false;
+        _spriteRenderer.sprite = babySprite;
     }
 
     // Update is called once per frame
@@ -67,11 +78,16 @@ public class EnemyBehavior : MonoBehaviour
         }
         if (health > damageHealthThreshold)
         {
+            if (_spriteRenderer.sprite != adultSprite)
+            {
+                _animator.enabled = true;
+                _spriteRenderer.sprite = adultSprite;
+            }
             // if (health > damageHealthThreshold), deal damage to body (player) every damage interval
             if (attackCooldown <= 0)
             {
-                Player.Instance.DamagePlayer(DAMAGE_VALUE); // TODO: multiply damage by zone bonus
-                attackCooldown = ATTACK_RATE;
+                _animator.SetTrigger("Biting");
+                attackCooldown = ATTACK_COOLDOWN;
             }
 
             attackCooldown -= Time.deltaTime * ATTACK_RATE;

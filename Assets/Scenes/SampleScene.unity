@@ -5138,7 +5138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &636469186
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6580,7 +6580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39fe6015e741742ea9288837f7ff621b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: {fileID: 912928158}
+  CurrentHealth: {fileID: 1448159982}
 --- !u!114 &912928158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9650,6 +9650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298173901}
   - component: {fileID: 1298173902}
+  - component: {fileID: 1298173903}
   m_Layer: 0
   m_Name: heart
   m_TagString: Untagged
@@ -9724,6 +9725,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1298173903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298173900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712e5267b396c4f02bc42b4062ee06a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cycleLength: 0.8
 --- !u!43 &1310963683
 Mesh:
   m_ObjectHideFlags: 0
