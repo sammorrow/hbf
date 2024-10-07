@@ -17,9 +17,7 @@ public class Player : Singleton<Player>
     // Movement
     public float Speed = 7f;
 
-    private float _horizontalInput;
-    private float _verticalInput;
-
+    [SerializeField] private CharacterController _selfController;
     [SerializeField] private CharacterController _characterController;
 
     // Shoot
@@ -40,7 +38,7 @@ public class Player : Singleton<Player>
     // Recharge ammo
     public GameObject rechargeZone;
     public UIAmmo uiAmmo;
-    public float RECHARGE_RATE = 2;
+    public float RECHARGE_RATE = 1;
     public float rechargeTimer;
 
     public void Initialize()
@@ -56,7 +54,6 @@ public class Player : Singleton<Player>
         creaturePrefab = prefabShot1;
         killCount = 0;
         uiAmmo.UpdateUIAmmo();
-        // TODO: change position to be center of body?
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,11 +70,11 @@ public class Player : Singleton<Player>
             if (rechargeTimer <= 0)
             {
                 rechargeTimer = 1;
-                if (ammo[ammoType] < maxAmmo[ammoType])
-                {
-                    ammo[ammoType]++;
-                    uiAmmo.UpdateUIAmmo();
-                }
+                for (int i = 0; i < 3; i++)
+                    if (ammo[i] < maxAmmo[i])
+                        ammo[i]++;
+
+                uiAmmo.UpdateUIAmmo();
             }
         }
     }
@@ -91,6 +88,9 @@ public class Player : Singleton<Player>
     // no fixedupdate, uses time.deltatime
     private void Update()
     {
+        if (Time.timeScale <= 0)
+            return;
+
         Move();
         SwitchAmmo();
         if (GameManager.Instance.GunCooldown > 0)
@@ -157,13 +157,10 @@ public class Player : Singleton<Player>
 
     private void Move()
     {
-        _horizontalInput = _horizontalInput < 0 ? -1 : Mathf.Ceil(_horizontalInput);
-        _verticalInput = _verticalInput < 0 ? -1 : Mathf.Ceil(_verticalInput);
-
         Vector3 movementVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
 
-
+        _selfController.Move(movementVector * Speed * Time.deltaTime);
         _characterController.Move(movementVector * Speed * Time.deltaTime);
 
     }

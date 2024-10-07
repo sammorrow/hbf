@@ -10,7 +10,7 @@ public class CreatureScanner : CreatureBase
 
     void Start()
     {
-        Lifespan = 8;
+        Lifespan = 60;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -18,10 +18,12 @@ public class CreatureScanner : CreatureBase
         Alarm();
     }
 
-    void Update()
+    new private void Update()
     {
         if (Alarm())
             ZoneManager.Instance.OnVirusDetected(gameObject.transform.position);
+
+        base.Update();
     }
 
     public bool Alarm()

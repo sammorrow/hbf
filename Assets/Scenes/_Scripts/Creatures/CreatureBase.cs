@@ -6,11 +6,11 @@ using UnityEngine;
 public abstract class CreatureBase : MonoBehaviour
 {
 
-    private const float BASE_CREATURE_LIFESPAN = 3;
+    protected const float BASE_CREATURE_LIFESPAN = 15;
 
     public float Lifespan = BASE_CREATURE_LIFESPAN;
 
-    private void Update()
+    protected void Update()
     {
         Lifespan -= Time.deltaTime;
 
