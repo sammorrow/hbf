@@ -60,13 +60,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.30f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Assets\Scenes\_Scripts\Managers\ZoneManager.cs" />
     <Compile Include="Assets\Scenes\_Scripts\UI\MinimapCamera.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureJanitor.cs" />
     <Compile Include="Assets\Scenes\_Scripts\UI\UIAmmo.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureShooter.cs" />
+    <Compile Include="Assets\Scenes\_Scripts\World\Heart.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureScanner.cs" />
     <Compile Include="Assets\Scenes\_Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Utilities\Singleton.cs" />
@@ -76,26 +76,8 @@
     <Compile Include="Assets\Scenes\_Scripts\UI\HealthBar.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Enemy\EnemyBehavior.cs" />
+    <Compile Include="Assets\Scenes\_Scripts\World\Zone.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Creatures\ProjectileBehavior.cs" />
-=======
-    <Compile Include="Assets/Scenes/_Scripts/Managers/ZoneManager.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/UI/MinimapCamera.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Player/Player.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureJanitor.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/UI/UIAmmo.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureShooter.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/World/Heart.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureScanner.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/UI/UIManager.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Utilities/Singleton.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Player/CharacterController.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Creatures/CreatureBase.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/UI/Debug.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/UI/HealthBar.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Managers/GameManager.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/Enemy/EnemyBehavior.cs" />
-    <Compile Include="Assets/Scenes/_Scripts/World/Zone.cs" />
->>>>>>> 6f3ed83c97b16606772152e6f7ba8128e8158dad
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -459,6 +441,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -1018,11 +1004,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.InputSystem">
-<<<<<<< HEAD
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
-=======
-      <HintPath>Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
->>>>>>> 6f3ed83c97b16606772152e6f7ba8128e8158dad
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
@@ -1030,19 +1012,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-<<<<<<< HEAD
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
-=======
-      <HintPath>Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>Library/ScriptAssemblies/Unity.InputSystem.ForUI.dll</HintPath>
->>>>>>> 6f3ed83c97b16606772152e6f7ba8128e8158dad
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
@@ -1062,11 +1036,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
-<<<<<<< HEAD
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-=======
-      <HintPath>Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
->>>>>>> 6f3ed83c97b16606772152e6f7ba8128e8158dad
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
@@ -1095,6 +1065,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{33A2E144-BD3B-6B21-2B68-D7F5A46AC8C9}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
