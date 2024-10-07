@@ -106,9 +106,10 @@ public class EnemyBehavior : MonoBehaviour
 				deadTimer += Time.deltaTime; // if dead AND deadTime > deadTimer, increment deadTimer
 			else
 				health = 1; // if dead AND deadTime <= deadTimer, set health to 1 (resurrect)
-		}
-			
-		if (health >= splitHealthThreshold)
+				_spriteRenderer.sprite = babySprite;
+        }
+
+        if (health >= splitHealthThreshold)
 			Split();
 	}
 }
