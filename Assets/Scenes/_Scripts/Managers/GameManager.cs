@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
@@ -19,9 +20,11 @@ public class GameManager : Singleton<GameManager>
     public float SurvivalTime = 0;
 
     [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject world;
 
     public void StartGame()
     {
+        ClearGameState();
         Time.timeScale = 1;
         gameRunTime = 0;
         enemySpawnTime = BASE_SPAWN_TIME; // TODO: tweak enemySpawnTime
@@ -33,6 +36,22 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 0;
         UIManager.Instance.ShowResults();
+    }
+
+    private void ClearGameState()
+    {
+        // TODO: get all gameobjects in scene, find all gameobjects in "enemy" layer
+        GameObject[] sceneObjs = SceneManager.GetActiveScene().GetRootGameObjects();
+        foreach (GameObject obj in sceneObjs)
+        {
+            if (obj.layer == LayerMask.NameToLayer("Enemy"))
+                Destroy(obj);
+        }
+        foreach (Transform child in world.transform)
+        {
+            if (child.tag == "Untagged")
+                Destroy(child.gameObject);
+        }
     }
 
     private void Start()
