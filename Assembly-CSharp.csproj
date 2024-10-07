@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scenes\_Scripts\UI\MinimapCamera.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureJanitor.cs" />
+    <Compile Include="Assets\KillCount.cs" />
     <Compile Include="Assets\Scenes\_Scripts\UI\UIAmmo.cs" />
     <Compile Include="Assets\Scenes\_Scripts\UI\UIKillCount.cs" />
     <Compile Include="Assets\Scenes\_Scripts\Creatures\CreatureShooter.cs" />

@@ -65,8 +65,11 @@ public class EnemyBehavior : MonoBehaviour
 		health -= damageValue;
 		virusDamageSound.Play();
         if (health <= 0)
-			_spriteRenderer.sprite = deadSprite;
-			deadTimer = 0;
+		{
+            Debug.Log("it's dead?");
+            _spriteRenderer.sprite = deadSprite;
+            deadTimer = 0;
+        }
 	}
 
 	void SetHealth(float newHealthValue)
@@ -126,11 +129,12 @@ public class EnemyBehavior : MonoBehaviour
 		}
 		if (health <= 0)
 		{
-			if (deadTime > deadTimer)
+			if (deadTime > deadTimer) 
 				deadTimer += Time.deltaTime; // if dead AND deadTime > deadTimer, increment deadTimer
-			else
+			else {
 				health = 1; // if dead AND deadTime <= deadTimer, set health to 1 (resurrect)
 				_spriteRenderer.sprite = babySprite;
+			}
         }
 
         if (health >= splitHealthThreshold)
