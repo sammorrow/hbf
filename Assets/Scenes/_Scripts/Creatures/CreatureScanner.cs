@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using DG.Tweening;
+using Random = UnityEngine.Random;
 
 public class CreatureScanner : CreatureBase
 {
@@ -12,7 +14,8 @@ public class CreatureScanner : CreatureBase
 
     void Start()
     {
-        Lifespan = 60;
+      transform.DORotate(new Vector3(-90, 0f, -180 + Random.Range(-25, 25)), 3).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+      Lifespan = 60;
     }
 
     new void Update()
