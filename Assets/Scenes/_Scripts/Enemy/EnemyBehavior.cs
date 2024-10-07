@@ -5,105 +5,106 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public bool justSplit = false;
-    [SerializeField] private float health;
-    private float splitHealthThreshold = 100; // amount of health enemy needs to be able to split and reproduce
-    private float damageHealthThreshold = 25; // min amount of health enemy needs to be able to start attacking body
-    private float deadTime = 30; // how long the enemy will remain dead/removable for
-    private float deadTimer;
-    public float ATTACK_RATE = 0.5f;
-    public float DAMAGE_VALUE = 1;
-    public float REGENERATION = .5f;
-    private float attackCooldown;
+	public bool justSplit = false;
+	[SerializeField] private float health;
+	private float splitHealthThreshold = 100; // amount of health enemy needs to be able to split and reproduce
+	private float damageHealthThreshold = 25; // min amount of health enemy needs to be able to start attacking body
+	private float deadTime = 30; // how long the enemy will remain dead/removable for
+	private float deadTimer;
+	public float ATTACK_RATE = 0.5f;
+	public float DAMAGE_VALUE = 1;
+	public float REGENERATION = .5f;
+	private float attackCooldown;
 
-    public float ATTACK_COOLDOWN = 5f;
+	public float ATTACK_COOLDOWN = 5f;
 
-    [SerializeField] private Animator _animator;
+	[SerializeField] private Animator _animator;
 
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    public Sprite babySprite;
-    public Sprite adultSprite;
+	[SerializeField] private SpriteRenderer _spriteRenderer;
+	public Sprite babySprite;
+	public Sprite adultSprite;
+    public Sprite deadSprite;
+
 
     [SerializeField] GameObject selfPrefab; // used when enemy splits/duplicates
 
 
-    public float GetHealth()
-    {
-        return health;
-    }
+	public float GetHealth()
+	{
+		return health;
+	}
 
-    public void DamageVirus(float damageValue)
-    {
-        if (health > 0)
-        {
-            health -= damageValue;
-            if (health <= 0)
-                deadTimer = 0;
-        }
-    }
+	public void DamageVirus(float damageValue)
+	{
+		health -= damageValue;
+		if (health <= 0)
+			_spriteRenderer.sprite = deadSprite;
+			deadTimer = 0;
+	}
 
-    void SetHealth(float newHealthValue)
-    {
-        health = newHealthValue;
-    }
+	void SetHealth(float newHealthValue)
+	{
+		health = newHealthValue;
+	}
 
-    void Split()
-    {
-        Vector3 randomVelocity = new Vector3(0,0,0); // TODO: make a random velocity, and set the newly created copy to have this velocity
-        GameObject newEnemy = Instantiate(selfPrefab, transform.position, Quaternion.Euler(90, 0, 0)); // split the enemy (create new copy) and set its health = damageHealthThreshold
-        newEnemy.GetComponent<EnemyBehavior>().justSplit = true;
-        SetHealth(damageHealthThreshold);
-    }
+	void Split()
+	{
+		Vector3 randomVelocity = new Vector3(0,0,0); // TODO: make a random velocity, and set the newly created copy to have this velocity
+		GameObject newEnemy = Instantiate(selfPrefab, transform.position, Quaternion.Euler(90, 0, 0)); // split the enemy (create new copy) and set its health = damageHealthThreshold
+		newEnemy.GetComponent<EnemyBehavior>().justSplit = true;
+		SetHealth(damageHealthThreshold);
+	}
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        health = 30;
-        _animator.enabled = false;
-        _spriteRenderer.sprite = babySprite;
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		health = 1;
+		_animator.enabled = false;
+		_spriteRenderer.sprite = babySprite;
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (justSplit)
-        {
-            health = damageHealthThreshold;
-            justSplit = false;
-        }
+	// Update is called once per frame
+	void Update()
+	{
+		if (justSplit)
+		{
+			health = damageHealthThreshold;
+			justSplit = false;
+		}
 
-        if (health > 0)
-        {
-            // if not dead (health > 0), increase health every few game ticks, then change size
-            health += REGENERATION * Time.deltaTime;
-            float enemySize = (2 * health / splitHealthThreshold) + .5f;
-            transform.localScale = new Vector3(enemySize, enemySize, 1);
-        }
-        if (health > damageHealthThreshold)
-        {
-            if (_spriteRenderer.sprite != adultSprite)
-            {
-                _animator.enabled = true;
-                _spriteRenderer.sprite = adultSprite;
-            }
-            // if (health > damageHealthThreshold), deal damage to body (player) every damage interval
-            if (attackCooldown <= 0)
-            {
-                _animator.SetTrigger("Biting");
-                attackCooldown = ATTACK_COOLDOWN;
-            }
+		if (health > 0)
+		{
+			// if not dead (health > 0), increase health every few game ticks, then change size
+			health += REGENERATION * Time.deltaTime;
+			float enemySize = (2 * health / splitHealthThreshold) + .5f;
+			transform.localScale = new Vector3(enemySize, enemySize, 1);
+		}
+		if (health > damageHealthThreshold)
+		{
+			if (_spriteRenderer.sprite != adultSprite)
+			{
+				_animator.enabled = true;
+				_spriteRenderer.sprite = adultSprite;
+			}
+			// if (health > damageHealthThreshold), deal damage to body (player) every damage interval
+			if (attackCooldown <= 0)
+			{
+				_animator.SetTrigger("Biting");
+				Player.Instance.DamagePlayer(DAMAGE_VALUE);
+				attackCooldown = ATTACK_COOLDOWN;
+			}
 
-            attackCooldown -= Time.deltaTime * ATTACK_RATE;
-        }
-        if (health <= 0)
-        {
-            if (deadTime > deadTimer)
-                deadTimer += Time.deltaTime; // if dead AND deadTime > deadTimer, increment deadTimer
-            else
-                health = 1; // if dead AND deadTime <= deadTimer, set health to 1 (resurrect)
-        }
-            
-        if (health >= splitHealthThreshold)
-            Split();
-    }
+			attackCooldown -= Time.deltaTime * ATTACK_RATE;
+		}
+		if (health <= 0)
+		{
+			if (deadTime > deadTimer)
+				deadTimer += Time.deltaTime; // if dead AND deadTime > deadTimer, increment deadTimer
+			else
+				health = 1; // if dead AND deadTime <= deadTimer, set health to 1 (resurrect)
+		}
+			
+		if (health >= splitHealthThreshold)
+			Split();
+	}
 }
