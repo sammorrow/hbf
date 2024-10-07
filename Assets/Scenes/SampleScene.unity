@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 191055906}
   - component: {fileID: 191055905}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: AmmoCountText2 (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1711,7 +1711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -42}
+  m_AnchoredPosition: {x: 0, y: -35}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &191055905
@@ -4540,7 +4540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: 0}
+  m_AnchoredPosition: {x: 110, y: 10}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536075275
@@ -5200,7 +5200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &661537134
@@ -6657,7 +6657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: 0}
+  m_AnchoredPosition: {x: -110, y: 10}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920438320
@@ -14499,10 +14499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  ammo:
-  - 0
-  - 0
-  - 0
+  ammo: 000000000000000000000000
+  maxAmmo: 000000000000000000000000
   ammoType: 0
   killCount: 0
   IsDead: 0
@@ -14518,6 +14516,10 @@ MonoBehaviour:
   prefabShot1: {fileID: 7151337822141544190, guid: ffe0a25588aed45e494a3902fe6f9afd, type: 3}
   prefabShot2: {fileID: 7151337822141544190, guid: 9441677e8c9141d469e4d9926203649c, type: 3}
   prefabShot3: {fileID: 7151337822141544190, guid: 33dbad9f7d56afd46be866285bc0137b, type: 3}
+  rechargeZone: {fileID: 240299601}
+  uiAmmo: {fileID: 1885332875}
+  RECHARGE_RATE: 0
+  rechargeTimer: 0
 --- !u!1 &1877259913
 GameObject:
   m_ObjectHideFlags: 0
@@ -14662,6 +14664,7 @@ GameObject:
   - component: {fileID: 1885332872}
   - component: {fileID: 1885332874}
   - component: {fileID: 1885332873}
+  - component: {fileID: 1885332875}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -14733,6 +14736,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885332871}
   m_CullTransparentMesh: 1
+--- !u!114 &1885332875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885332871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a54a14577ab8d4846831763cd65185d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textAmmoCount1: {fileID: 2064091694}
+  textAmmoCount2: {fileID: 191055905}
+  textAmmoCount3: {fileID: 2113448882}
 --- !u!1 &1900903475
 GameObject:
   m_ObjectHideFlags: 0
@@ -16228,7 +16246,7 @@ GameObject:
   - component: {fileID: 2064091695}
   - component: {fileID: 2064091694}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: AmmoCountText1 (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16250,7 +16268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: -42}
+  m_AnchoredPosition: {x: -110, y: -35}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064091694
@@ -16737,7 +16755,7 @@ GameObject:
   - component: {fileID: 2113448883}
   - component: {fileID: 2113448882}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: AmmoCountText3 (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16759,7 +16777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: -42}
+  m_AnchoredPosition: {x: 110, y: -35}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2113448882

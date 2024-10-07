@@ -28,8 +28,12 @@ public class EnemyBehavior : MonoBehaviour
 
     [SerializeField] GameObject selfPrefab; // used when enemy splits/duplicates
 
+    private void OnTriggerStay(Collider other)
+    {
+        
+    }
 
-	public float GetHealth()
+    public float GetHealth()
 	{
 		return health;
 	}
@@ -49,7 +53,6 @@ public class EnemyBehavior : MonoBehaviour
 
 	void Split()
 	{
-		Vector3 randomVelocity = new Vector3(0,0,0); // TODO: make a random velocity, and set the newly created copy to have this velocity
 		GameObject newEnemy = Instantiate(selfPrefab, transform.position, Quaternion.Euler(90, 0, 0)); // split the enemy (create new copy) and set its health = damageHealthThreshold
 		newEnemy.GetComponent<EnemyBehavior>().justSplit = true;
 		SetHealth(damageHealthThreshold);

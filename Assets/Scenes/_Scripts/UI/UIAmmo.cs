@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIAmmo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public TMP_Text textAmmoCount1;
+    public TMP_Text textAmmoCount2;
+    public TMP_Text textAmmoCount3;
+
+    public void UpdateUIAmmo()
     {
-        
+        textAmmoCount1.text = Player.Instance.ammo[0].ToString();
+        textAmmoCount2.text = Player.Instance.ammo[1].ToString();
+        textAmmoCount3.text = Player.Instance.ammo[2].ToString();
     }
 }

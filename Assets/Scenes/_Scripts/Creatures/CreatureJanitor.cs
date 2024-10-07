@@ -9,7 +9,6 @@ public class CreatureJanitor : CreatureBase
     public float ATTACK_RANGE = 175;
     // this is tied (but not coupled) to animation length; don't change one without the other
     public float BOMB_FUSE = 1f;
-    public float fireTimer;
     public LayerMask enemyLayer;
 
     void Start()
