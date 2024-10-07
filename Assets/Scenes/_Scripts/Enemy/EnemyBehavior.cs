@@ -14,7 +14,7 @@ public class EnemyBehavior : MonoBehaviour
 	public float ATTACK_RATE = 1f;
 	public float DAMAGE_VALUE = 1;
 	public float REGENERATION = .5f;
-    public float ATTACK_COOLDOWN = 7.5f; 
+    public float ATTACK_COOLDOWN = 3f; 
 	private float attackCooldown;
 
 	public float SPEED = 4;
