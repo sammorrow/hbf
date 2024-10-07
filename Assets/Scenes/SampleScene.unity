@@ -5884,7 +5884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 354465232}
   - component: {fileID: 354465233}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12694,7 +12694,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 887
+    m_Bits: 1911
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -18712,7 +18712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1433935148}
   - component: {fileID: 1433935147}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SelectedAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20280,7 +20280,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 471
+    m_Bits: 135
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: f63e3b3fc32fd8f41a735cf7fb8d5e4f, type: 2}
   m_TargetDisplay: 0
@@ -21085,7 +21085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614545887}
   - component: {fileID: 1614545888}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22577,7 +22577,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1778037421}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Scanner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22743,13 +22743,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6929597228567120459, guid: dfa8bfede49d77141bf748a0877ab6c8, type: 3}
+      propertyPath: SPEED
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 673796138763013903, guid: dfa8bfede49d77141bf748a0877ab6c8, type: 3}
       propertyPath: m_Name
       value: EnemyPlaceholder
-      objectReference: {fileID: 0}
-    - target: {fileID: 3811472943538407695, guid: dfa8bfede49d77141bf748a0877ab6c8, type: 3}
-      propertyPath: m_Direction
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5888342004607722282, guid: dfa8bfede49d77141bf748a0877ab6c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26706,7 +26706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901463738}
   - component: {fileID: 1901463737}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SelectedAmmo (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27645,7 +27645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1912854231}
   - component: {fileID: 1912854232}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: SelectedAmmo (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

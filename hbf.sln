@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{33A2E144-BD3B-6B21-2B68-D7F5A46AC8C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.Player.csproj", "{F32DE2BD-7A06-3AE6-EF23-E8AA2CE920B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.Player.csproj", "{51384583-81DE-2B7E-CD3E-398D104E0AA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{33A2E144-BD3B-6B21-2B68-D7F5A46AC8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33A2E144-BD3B-6B21-2B68-D7F5A46AC8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33A2E144-BD3B-6B21-2B68-D7F5A46AC8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32DE2BD-7A06-3AE6-EF23-E8AA2CE920B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32DE2BD-7A06-3AE6-EF23-E8AA2CE920B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32DE2BD-7A06-3AE6-EF23-E8AA2CE920B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32DE2BD-7A06-3AE6-EF23-E8AA2CE920B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51384583-81DE-2B7E-CD3E-398D104E0AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51384583-81DE-2B7E-CD3E-398D104E0AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51384583-81DE-2B7E-CD3E-398D104E0AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51384583-81DE-2B7E-CD3E-398D104E0AA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

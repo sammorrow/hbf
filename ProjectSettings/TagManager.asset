@@ -3,27 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-<<<<<<< HEAD
-  - 
-  - 
-  - 
-  - 
-=======
   - Enemy
   - EditorOnly
   - Projectile
   - Recharge
   - Scanner
->>>>>>> 0f1072672f0deccf2c884451bc0b519f4a0565fa
-  - 
   - 
   - 
   - 

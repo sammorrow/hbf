@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lifespan: 30
-  scanRange: 1000
+  scanRange: 50
   ALARM_CYCLE: 1
   enemyLayer:
     serializedVersion: 2

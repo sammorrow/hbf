@@ -17,7 +17,7 @@ public class EnemyBehavior : MonoBehaviour
     public float ATTACK_COOLDOWN = 5f; 
 	private float attackCooldown;
 
-	public float SPEED = 1;
+	public float SPEED = 4;
 
     [SerializeField] private Animator _animator;
 
@@ -31,21 +31,24 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        int direction = Random.Range(0, 4);
-        switch (direction)
+        if (gameObject.layer == other.gameObject.layer)
         {
-            case 0:
-                transform.position = new Vector3(transform.position.x, 0, transform.position.y + SPEED * Time.deltaTime);
-                break;
-            case 1:
-                transform.position = new Vector3(transform.position.x - SPEED * Time.deltaTime, 0, transform.position.y);
-                break;
-            case 2:
-                transform.position = new Vector3(transform.position.x, 0, transform.position.y - SPEED * Time.deltaTime);
-                break;
-            case 3:
-                transform.position = new Vector3(transform.position.x + SPEED * Time.deltaTime, 0, transform.position.y);
-                break;
+            int direction = Random.Range(0, 4);
+            switch (direction)
+            {
+                case 0:
+                    transform.position = new Vector3(transform.position.x, 0, transform.position.y + SPEED * Time.deltaTime);
+                    break;
+                case 1:
+                    transform.position = new Vector3(transform.position.x - SPEED * Time.deltaTime, 0, transform.position.y);
+                    break;
+                case 2:
+                    transform.position = new Vector3(transform.position.x, 0, transform.position.y - SPEED * Time.deltaTime);
+                    break;
+                case 3:
+                    transform.position = new Vector3(transform.position.x + SPEED * Time.deltaTime, 0, transform.position.y);
+                    break;
+            }
         }
     }
 
